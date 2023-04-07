@@ -39,9 +39,9 @@ const CatGallery: React.FunctionComponent = () => {
 
     return (
         <>
-            {isLoading && <Loader />}
             <LayoutContainer>
                 <PageTitle title="Cat Gallery" />
+                {isLoading && <Loader />}
                 <div className="flex mx-auto flex-wrap">
                     {cats &&
                         cats.map((cat: Cat) => {
