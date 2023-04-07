@@ -47,9 +47,9 @@ export default function CatRandoo() {
                 {isLoading && <Loader />}
 
                 {catGif && (
-                    <div className="justify-center items-center flex w-full flex-col">
+                    <div className="justify-center items-center flex w-full flex-col max-h-[50%]">
                         <Subtitle>Enjoy a random cat gif. Need moar? Hit the button!</Subtitle>
-                        <img className=" w-[80%]" src={catGif} alt="Cute cat" />
+                        <img src={catGif} alt="Cute cat" />
                         <Button variant="primary" onClick={handleClick}>
                             The Button!
                         </Button>
