@@ -6,6 +6,7 @@ import AddACat from './pages/AddACat';
 import CatGallery from './pages/CatGallery';
 import CatRandoo from './pages/CatRandoo';
 import HomePage from './pages/HomePage';
+import CatSchool from './pages/CatSchool';
 
 function App() {
     return (
@@ -15,6 +16,7 @@ function App() {
                 <Route path="/cat-gallery" element={<CatGallery />} />
                 <Route path="/add-a-cat" element={<AddACat />} />
                 <Route path="/catrandoo" element={<CatRandoo />} />
+                <Route path="/catschool" element={<CatSchool />} />
             </Routes>
         </BrowserRouter>
     );
