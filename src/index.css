@@ -4,9 +4,22 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
 
-
 @layer base {
-  html {
-    font-family: 'Patrick Hand', cursive;
-  }
+    html {
+        font-family: 'Patrick Hand', cursive;
+    }
+}
+
+@layer components {
+    .button-primary {
+        @apply bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded m-3 w-[150px];
+    }
+
+    .button-secondary {
+        @apply border-2 border-blue-500 bg-white hover:bg-blue-700 hover:text-white text-blue-500 hover:border-blue-700;
+    }
+
+    .button-link {
+        @apply bg-transparent text-dark-green border-transparent   hover:text-pink m-0 px-1 hover:bg-transparent;
+    }
 }
