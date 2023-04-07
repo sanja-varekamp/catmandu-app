@@ -1,6 +1,6 @@
 import React from 'react';
 import LayoutContainer from '../components/LayoutContainer';
-import PageTitle from '../components/PageTitle/PageTitle';
+import PageTitle from '../components/PageTitle';
 import SelectBreed from '../components/SelectBreed';
 
 export default function CatSchool() {
