@@ -68,10 +68,10 @@ const SelectBreed: React.FunctionComponent = () => {
 
             {selectedBreed && (
                 <div className="flex flex-col md:flex-row justify-between">
-                    <div className="w-[46%] mt-12">
+                    <div className="md:w-[46%] mt-12">
                         <img className="rounded" src={selectedBreed.image.url} alt={selectedBreed.name} />
                     </div>
-                    <div className="w-[46%] border-2 border-dark-green rounded p-4 mt-12">
+                    <div className="md:w-[46%] border-2 border-dark-green rounded p-4 mt-12">
                         <CatProperty label="Breed" value={selectedBreed.name} />
 
                         <CatProperty label="Country of origin" value={selectedBreed.origin} />
