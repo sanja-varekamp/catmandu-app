@@ -52,7 +52,7 @@ const SelectBreed: React.FunctionComponent = () => {
         <>
             {isLoading && <Loader />}
             <div className="flex justify-center w-full">
-                <span className="border-2 border-dark-green h-fit mt-2 p-2 rounded">
+                <span className="border-2 border-dark-green h-fit mt-12 p-2 rounded">
                     <label className="text-2xl mr-2" htmlFor="breed_selector">
                         Select a breed:
                     </label>
@@ -67,7 +67,7 @@ const SelectBreed: React.FunctionComponent = () => {
             </div>
 
             {selectedBreed && (
-                <div className="flex justify-between">
+                <div className="flex flex-col md:flex-row justify-between">
                     <div className="w-[46%] mt-12">
                         <img className="rounded" src={selectedBreed.image.url} alt={selectedBreed.name} />
                     </div>
