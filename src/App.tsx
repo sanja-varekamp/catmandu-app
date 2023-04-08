@@ -7,13 +7,14 @@ import CatGallery from './pages/CatGallery';
 import CatRandoo from './pages/CatRandoo';
 import HomePage from './pages/HomePage';
 import CatSchool from './pages/CatSchool';
-import Navbar from './components/Navbar';
+import Navbar from './components/Navbar/Navbar';
 
 function App() {
     return (
         <>
-            <Navbar />
             <BrowserRouter>
+                <Navbar />
+
                 <Routes>
                     <Route path="/" element={<HomePage />} />
                     <Route path="/cat-gallery" element={<CatGallery />} />
