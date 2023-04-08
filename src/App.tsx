@@ -7,18 +7,22 @@ import CatGallery from './pages/CatGallery';
 import CatRandoo from './pages/CatRandoo';
 import HomePage from './pages/HomePage';
 import CatSchool from './pages/CatSchool';
+import Navbar from './components/Navbar';
 
 function App() {
     return (
-        <BrowserRouter>
-            <Routes>
-                <Route path="/" element={<HomePage />} />
-                <Route path="/cat-gallery" element={<CatGallery />} />
-                <Route path="/add-a-cat" element={<AddACat />} />
-                <Route path="/catrandoo" element={<CatRandoo />} />
-                <Route path="/catschool" element={<CatSchool />} />
-            </Routes>
-        </BrowserRouter>
+        <>
+            <Navbar />
+            <BrowserRouter>
+                <Routes>
+                    <Route path="/" element={<HomePage />} />
+                    <Route path="/cat-gallery" element={<CatGallery />} />
+                    <Route path="/add-a-cat" element={<AddACat />} />
+                    <Route path="/catrandoo" element={<CatRandoo />} />
+                    <Route path="/catschool" element={<CatSchool />} />
+                </Routes>
+            </BrowserRouter>
+        </>
     );
 }
 
