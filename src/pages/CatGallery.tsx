@@ -42,7 +42,7 @@ const CatGallery: React.FunctionComponent = () => {
             <LayoutContainer>
                 <PageTitle title="Cat Gallery" />
                 {isLoading && <Loader />}
-                <div className="flex mx-auto flex-wrap justify-center">
+                <div className="flex mx-auto w-full flex-wrap justify-center">
                     {cats &&
                         cats.map((cat: Cat) => {
                             return <CatCard cat={cat} key={cat.id} />;
