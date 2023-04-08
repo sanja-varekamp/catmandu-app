@@ -32,7 +32,7 @@ export default function Navbar() {
     return (
         <LayoutContainer>
             {/* small and medium screens navigation, under 1024px */}
-            <div ref={ref} className="w-full flex justify-end mt-4 lg:hidden">
+            <div ref={ref} className="w-full flex justify-end lg:hidden">
                 <div>
                     <Button onClick={handleClick} className="p-0 m-2 text-dark-green ">
                         <FontAwesomeIcon icon={faBars} size="2xl" />
@@ -52,7 +52,7 @@ export default function Navbar() {
             </div>
 
             {/* large screens navigation, 1024px and above*/}
-            <nav className="hidden lg:flex h-20 border-2 mt-4 border-dark-green bg-transparent-green justify-between text-3xl w-full items-center ">
+            <nav className="hidden lg:flex h-20 border-2 border-dark-green bg-transparent-green justify-between text-3xl w-full items-center ">
                 <div></div>
                 <div>
                     <ul className="flex flex-row ">
