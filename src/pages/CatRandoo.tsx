@@ -43,12 +43,12 @@ export default function CatRandoo() {
     return (
         <>
             <LayoutContainer>
-                <PageTitle title="CatRandoo!" />
+                <PageTitle title="CatRandoo(M)!" />
                 {isLoading && <Loader />}
 
                 {catGif && (
                     <div className="justify-center items-center flex w-full flex-col max-h-[50%]">
-                        <Subtitle>Enjoy a random cat gif. Need moar? Hit the button!</Subtitle>
+                        <Subtitle>Enjoy a random cat gif. Need more? Hit the button!</Subtitle>
                         <img src={catGif} alt="Cute cat" />
                         <Button variant="primary" onClick={handleClick}>
                             The Button!
