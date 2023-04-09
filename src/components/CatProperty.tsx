@@ -4,7 +4,7 @@ import { faPaw } from '@fortawesome/free-solid-svg-icons';
 
 interface Props {
     label: string;
-    value: React.ReactNode;
+    value?: React.ReactNode;
 }
 
 export default function CatProperty({ label, value }: Props) {
