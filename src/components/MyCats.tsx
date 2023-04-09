@@ -13,7 +13,7 @@ const MyCats: React.FunctionComponent = () => {
     setIsLoading(true);
 
     try {
-      const response = await fetch('https://api.thecatapi.com/v1/images', {
+      const response = await fetch('https://api.thecatapi.com/v1/images?limit=12', {
         headers: {
           'x-api-key': `${process.env.REACT_APP_CAT_API_KEY}`
         }
