@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import CatProperty from './CatProperty';
-import { Button } from './Button';
-import Loader from './Loader/Loader';
+import { Button } from '../Button';
+import Loader from '../Loader/Loader';
 import CatPropertyRating from './CatPropertyRating';
 
 export interface CatBreed {

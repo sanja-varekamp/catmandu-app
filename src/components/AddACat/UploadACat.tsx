@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button } from './Button';
+import { Button } from '../Button';
 
 const UploadACat: React.FC = () => {
     const [file, setFile] = useState<File | null>(null);

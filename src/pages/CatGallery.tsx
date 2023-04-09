@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import CatCard from '../components/CatCard';
 import Loader from '../components/Loader/Loader';
-import { CatBreed } from '../components/SelectBreed';
+import { CatBreed } from '../components/CatSchool/SelectBreed';
 import PageTitle from '../components/PageTitle';
 import LayoutContainer from '../components/LayoutContainer';
 

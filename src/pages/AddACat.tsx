@@ -1,6 +1,6 @@
 import React from 'react';
 import LayoutContainer from '../components/LayoutContainer';
-import UploadACat from '../components/UploadACat';
+import UploadACat from '../components/AddACat/UploadACat';
 import PageTitle from '../components/PageTitle';
 import MyCats from '../components/MyCats';
 
