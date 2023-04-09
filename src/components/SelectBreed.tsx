@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import CatProperty from './CatProperty';
 import { Button } from './Button';
 import Loader from './Loader/Loader';
+import CatPropertyRating from './CatPropertyRating';
 
 export interface CatBreed {
     id: string;
@@ -10,6 +11,8 @@ export interface CatBreed {
     wikipedia_url: string;
     description: string;
     origin: string;
+    affection_level: number;
+    shedding_level: number;
     image: {
         url: string;
     };
@@ -79,6 +82,10 @@ const SelectBreed: React.FunctionComponent = () => {
                         <CatProperty label="Description" value={selectedBreed.description} />
 
                         <CatProperty label="Temperament" value={selectedBreed.temperament} />
+
+                        <CatPropertyRating label="Affection" ratingNumber={selectedBreed.affection_level} />
+
+                        <CatPropertyRating label="Shedding" ratingNumber={selectedBreed.shedding_level} />
 
                         <CatProperty
                             label="Learn More"
