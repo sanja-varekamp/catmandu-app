@@ -6,51 +6,52 @@ import PageTitle from '../components/PageTitle';
 import LayoutContainer from '../components/LayoutContainer';
 
 export interface Cat {
-    id: string;
-    url?: string;
-    breeds: CatBreed[];
+  id: string;
+  url?: string;
+  sub_id?: string;
+  breeds: CatBreed[];
 }
 
 const CatGallery: React.FunctionComponent = () => {
-    const [cats, setCats] = useState<Cat[]>([]);
-    const [isLoading, setIsLoading] = useState(false);
+  const [cats, setCats] = useState<Cat[]>([]);
+  const [isLoading, setIsLoading] = useState(false);
 
-    async function getCats() {
-        setCats([]);
-        setIsLoading(true);
+  async function getCats() {
+    setCats([]);
+    setIsLoading(true);
 
-        try {
-            const response = await fetch('https://api.thecatapi.com/v1/images/search?has_breeds=1&limit=12', {
-                headers: {
-                    'x-api-key': `${process.env.REACT_APP_CAT_API_KEY}`
-                }
-            });
-            const data: Cat[] = await response.json();
-            setCats(data);
-            setIsLoading(false);
-        } catch (e) {
-            console.log(e);
+    try {
+      const response = await fetch('https://api.thecatapi.com/v1/images/search?has_breeds=1&limit=12', {
+        headers: {
+          'x-api-key': `${process.env.REACT_APP_CAT_API_KEY}`
         }
+      });
+      const data: Cat[] = await response.json();
+      setCats(data);
+      setIsLoading(false);
+    } catch (e) {
+      console.log(e);
     }
+  }
 
-    useEffect(() => {
-        getCats();
-    }, []);
+  useEffect(() => {
+    getCats();
+  }, []);
 
-    return (
-        <>
-            <LayoutContainer>
-                <PageTitle title="Cat Gallery" />
-                {isLoading && <Loader />}
-                <div className="flex mx-auto w-full flex-wrap justify-center">
-                    {cats &&
-                        cats.map((cat: Cat) => {
-                            return <CatCard cat={cat} key={cat.id} />;
-                        })}
-                </div>
-            </LayoutContainer>
-        </>
-    );
+  return (
+    <>
+      <LayoutContainer>
+        <PageTitle title="Cat Gallery" />
+        {isLoading && <Loader />}
+        <div className="flex mx-auto w-full flex-wrap justify-center">
+          {cats &&
+            cats.map((cat: Cat) => {
+              return <CatCard hasPropertiesSection cat={cat} key={cat.id} />;
+            })}
+        </div>
+      </LayoutContainer>
+    </>
+  );
 };
 
 export default CatGallery;
