@@ -1,6 +1,8 @@
 import React, { useState, useRef } from 'react';
 import { Button } from '../Button';
 import Loader from '../Loader/Loader';
+import { myCatsState } from '../../recoil/atoms/myCats';
+import { useRecoilCallback } from 'recoil';
 
 const UploadForm: React.FunctionComponent = () => {
   const [subId, setSubId] = useState<string>('');
@@ -38,7 +40,7 @@ const UploadForm: React.FunctionComponent = () => {
     setSubIdError(validateSubId(value));
   };
 
-  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = useRecoilCallback(({ set }) => async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setIsLoading(true);
 
@@ -78,6 +80,18 @@ const UploadForm: React.FunctionComponent = () => {
 
       const data = await response.json();
       console.log(data);
+      const actualNewCatResponse = await fetch(`https://api.thecatapi.com/v1/images/${data.id}`, {
+        method: 'GET',
+        headers: {
+          'x-api-key': `${process.env.REACT_APP_CAT_API_KEY}`
+        }
+      });
+      const actualNewCatResponseData = await actualNewCatResponse.json();
+
+      set(myCatsState, (existingCats) => {
+        return [{ ...actualNewCatResponseData, breeds: [] }, ...existingCats];
+      });
+      console.log(data);
       setIsLoading(false);
     } catch (error) {
       console.error(error);
@@ -86,7 +100,7 @@ const UploadForm: React.FunctionComponent = () => {
     setTimeout(() => {
       setUploadStatus('');
     }, 5000);
-  };
+  });
 
   return (
     <div className="border-2 border-dark-green p-2 mx-auto my-4">
