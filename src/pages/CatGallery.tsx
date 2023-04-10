@@ -48,6 +48,7 @@ const CatGallery: React.FunctionComponent = () => {
     setIsOpen(!isOpen);
   };
 
+  //TODO doesn't work as expected, currently requires manual refresh to see it
   if (myCats.state === 'hasValue') {
     const extraCats = myCats.contents;
     return (
