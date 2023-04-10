@@ -1,7 +1,7 @@
 import { atom } from 'recoil';
 import { Cat } from '../../pages/CatGallery';
 
-export const catListState = atom<Cat[]>({
-  key: 'catListState',
+export const myCatsState = atom<Cat[]>({
+  key: 'myCatsState',
   default: []
 });
