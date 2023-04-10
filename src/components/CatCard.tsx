@@ -8,9 +8,10 @@ export interface CatCardProps {
   cat: Cat;
   hasPropertiesSection: boolean;
   hasRemoveButton?: boolean;
+  handleDelete?: () => void;
 }
 
-const CatCard: React.FunctionComponent<CatCardProps> = ({ cat, hasPropertiesSection, hasRemoveButton }: CatCardProps) => {
+const CatCard: React.FunctionComponent<CatCardProps> = ({ cat, hasPropertiesSection, hasRemoveButton, handleDelete }: CatCardProps) => {
   const breed = cat.breeds[0] || {};
   return (
     <div className={`${hasPropertiesSection ? 'min-h-[430px]' : 'min-h-[350px]'} border-[4px] border-light-green rounded w-[400px]  flex m-5 flex-col justify-between`}>
@@ -18,7 +19,9 @@ const CatCard: React.FunctionComponent<CatCardProps> = ({ cat, hasPropertiesSect
         <p className="text-2xl p-2 ">{breed.name ? breed.name : cat.sub_id}</p>
         {hasRemoveButton && (
           <span className="px-2 text-dark-green hover:text-red-500">
-            <FontAwesomeIcon title="Remove image" icon={faTrashCan} />
+            <button onClick={handleDelete}>
+              <FontAwesomeIcon title="Remove image" icon={faTrashCan} />
+            </button>
           </span>
         )}
       </div>
