@@ -39,7 +39,7 @@ const MyCats: React.FunctionComponent = () => {
         <div className="flex mx-auto w-full flex-wrap justify-center">
           {myCats &&
             myCats.map((cat: Cat) => {
-              return <CatCard hasPropertiesSection={false} cat={cat} key={cat.id} />;
+              return <CatCard hasRemoveButton hasPropertiesSection={false} cat={cat} key={cat.id} />;
             })}
         </div>
       </LayoutContainer>
